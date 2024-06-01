@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Players = ({ name, symbol, isActive , onChangename }) => {
+const Players = ({ name, symbol, isActive, onChangename }) => {
     const [newName, setNewName] = useState(name);
     const [isEditing, setIsEditing] = useState(false);
 
@@ -10,8 +10,8 @@ const Players = ({ name, symbol, isActive , onChangename }) => {
 
     function handleEditClick() {
         setIsEditing(editing => !editing);
-        if(isEditing) {
-        onChangename(Symbol,newName);
+        if (isEditing) {
+            onChangename(symbol, newName);
         }
     }
 
@@ -29,7 +29,7 @@ const Players = ({ name, symbol, isActive , onChangename }) => {
         <li className={isActive ? 'active' : undefined}>
             <span className="player">
                 {playerNameElement}
-                <span className="Player-symbol">{symbol}</span>
+                <span className="player-symbol">{symbol}</span>
             </span>
             <button onClick={handleEditClick}>
                 {isEditing ? 'Save' : 'Edit'}
